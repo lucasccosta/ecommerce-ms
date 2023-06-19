@@ -1,4 +1,5 @@
 import { Kafka } from "kafkajs";
+import 'dotenv/config';
 
 const kafka = new Kafka({
 
@@ -8,9 +9,9 @@ const kafka = new Kafka({
 
     mechanism: 'scram-sha-256',
 
-    username: 'cmVsZXZhbnQtamF5LTExNzM0JIDkJjsMAxN56V_HdcSb-3dOUAxI5KOEwrfLjnY',
+    username: process.env.KAFKA_USERNAME,
 
-    password: '744f636937024c4f92f96fd2ad97388f'
+    password: process.env.KAFKA_PASSWORD
 
   },
   ssl: true,
