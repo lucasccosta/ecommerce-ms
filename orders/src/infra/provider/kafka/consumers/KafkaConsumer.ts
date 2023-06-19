@@ -1,0 +1,11 @@
+import { Consumer } from "kafkajs"
+import { kafka } from ".."
+
+export const kafkaConsumer = async(topic: string): Promise<Consumer> => {
+  const consumer = kafka.consumer({groupId: "ORDER_APP"})
+  await consumer.connect()
+
+  await consumer.subscribe({ topic, fromBeginning: true})
+
+  return consumer
+}
