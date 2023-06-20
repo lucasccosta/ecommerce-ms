@@ -1,10 +1,9 @@
 import { Router } from "express";
-import { CreateCustomerController } from "../modules/cutomers/create/CreateCustomerController";
+import { createCustomerAdapter } from "../modules/cutomers/adapters/CustomersAdapter";
+import { createCustomerControllerFactory } from "../modules/cutomers/create/factory/CreateCustomerControllerFactory";
 
 const customersRouter = Router();
 
-const createCustomerController = new CreateCustomerController()
-
-customersRouter.post('/create/users', createCustomerController.handle)
+customersRouter.post('/create/users', createCustomerAdapter(createCustomerControllerFactory()))
 
 export { customersRouter }
