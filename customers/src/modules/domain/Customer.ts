@@ -1,3 +1,5 @@
+import { CustomError } from "../cutomers/create/CustomError";
+
 export type CustomerDomain = {
   id: string;
   name: string;
@@ -42,19 +44,19 @@ class Customer {
 
   validate() {
     if (this.id.length == 0) {
-      throw new Error("Id is required");
+      throw new CustomError("Id is required");
     }
     if (this.name.length == 0) {
-      throw new Error("Please insert a valid name");
+      throw new CustomError("Please insert a valid name");
     }
     if (this.email.length == 0) {
-      throw new Error("Please insert a valid email");
+      throw new CustomError("Please insert a valid email");
     }
     if (this.password.length < 8) {
-      throw new Error("Please insert a password with at least 8 characters");
+      throw new CustomError("Please insert a password with at least 8 characters");
     }
     if (this.phone.length != 9) {
-      throw new Error("Please insert a valid phone number");
+      throw new CustomError("Please insert a valid phone number");
     }
   }
 
