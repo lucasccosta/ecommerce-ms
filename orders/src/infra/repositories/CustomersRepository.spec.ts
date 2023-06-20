@@ -36,5 +36,6 @@ describe("Customer repository unit tests", () => {
 
     expect(customerModel.dataValues.email).toBe(customer.email);
     expect(customerModel.dataValues.externalId).toBe(customer.externalId);
+    expect(customerCreated).toBeInstanceOf(CustomersModel);
   })
 });
