@@ -1,7 +1,7 @@
+import { CustomersModel } from "../../../config/db/sequelize/models/CustomersModel";
+import { ICreateCustomer } from "../../../modules/cutomers/DTOs";
+import { Customer } from "../../../modules/domain/Customer";
 import { ICustomersRepository } from "./ICustomersRepository";
-import { CustomersModel } from "../../config/db/sequelize/models/CustomersModel";
-import { Customer } from "../../modules/domain/Customer";
-import { ICreateCustomer } from "../../modules/cutomers/DTOs";
 
 export class CustomersRepository implements ICustomersRepository {
   private customerModel = CustomersModel;
