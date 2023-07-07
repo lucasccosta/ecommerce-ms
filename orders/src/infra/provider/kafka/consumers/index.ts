@@ -1,7 +1,11 @@
-import { container } from 'tsyringe'
-import './create-client/index'
-import { Consumers } from './create-client/index'
+import { container } from "tsyringe";
+import "./create-client/CreateClientConsumer";
+import "./create-product/CreateProductConsumer";
+import { CustomerConsumer } from "./create-client/CreateClientConsumer";
+import { ProductConsumer } from "./create-product/CreateProductConsumer";
 
-const consumer = container.resolve(Consumers)
+const customerConsumer = container.resolve(CustomerConsumer);
+const productConsumer = container.resolve(ProductConsumer);
 
-consumer.createCustomerConsumer()
+customerConsumer.createCustomerConsumer();
+productConsumer.createProductConsumer();

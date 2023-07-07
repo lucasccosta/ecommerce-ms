@@ -11,13 +11,17 @@ export class CreateProductsController {
 
     const createProductsUseCase = container.resolve(CreateProductsUseCase);
 
-    const response = await createProductsUseCase.execute({
-      name,
-      code,
-      price,
-      quantity,
-    });
+    try {
+      const response = await createProductsUseCase.execute({
+        name,
+        code,
+        price,
+        quantity,
+      });
 
-    return httpResponse.status(201).send(response);
+      return httpResponse.status(201).send(response);
+    } catch (error) {
+      return httpResponse.status(error.status).send(error.message);
+    }
   }
 }
