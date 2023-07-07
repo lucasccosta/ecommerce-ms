@@ -1,6 +1,6 @@
 import { container } from "tsyringe";
-import { IProductsRepository } from "../../infra/repositories/IProductsRepositoryRepository";
-import { ProductsRepository } from "../../infra/repositories/ProductsRepositoryRepository";
+import { IProductsRepository } from "../../infra/repositories/IProductsRepository";
+import { ProductsRepository } from "../../infra/repositories/ProductsRepository";
 
 container.registerSingleton<IProductsRepository>(
   "ProductsRepository",
