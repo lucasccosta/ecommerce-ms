@@ -1,5 +1,6 @@
 import "reflect-metadata";
-import "./shared/container/index"
+import "./shared/container/index";
+import "./shared/provider/index";
 import express from "express";
 import bodyParser from "body-parser";
 import { router } from "./routes";
