@@ -36,20 +36,3 @@ export class ProductConsumer {
 
   private;
 }
-
-// export const createCustomerConsumer = async() =>{
-//   const consumer = await kafkaConsumer("CUSTOMER_CREATED")
-//   await  consumer.run({
-//     eachMessage: async ({message}) => {
-//       // message is in Buffer
-//       const messageToString = message.value!.toString()
-//       console.log(messageToString)
-
-//       const customer = JSON.parse(messageToString) as CustomerConsumer
-
-//       // usar o repositorio
-//     }
-//   })
-// }
-
-// createCustomerConsumer()
