@@ -36,41 +36,41 @@ services:
     ports:
       - "5434:5432"
 
-  # products-service:
-  #   build: ./products
-  #   container_name: products-service-app
-  #   ports: 
-  #     - 3331:3331
-  #   volumes:
-  #     - .:/usr/products
-  #   links:
-  #     - db-service-products
-  #   depends_on:
-  #     - db-service-products
+  products-service:
+    build: ./products
+    container_name: products-service-app
+    ports: 
+      - 3331:3331
+    volumes:
+      - .:/usr/products
+    links:
+      - db-service-products
+    depends_on:
+      - db-service-products
 
-  # orders-service:
-  #   build: ./orders
-  #   container_name: orders-service-app
-  #   ports: 
-  #     - 3332:3332
-  #   volumes:
-  #     - .:/usr/orders
-  #   links:
-  #     - db-service-orders
-  #   depends_on:
-  #     - db-service-orders
+  orders-service:
+    build: ./orders
+    container_name: orders-service-app
+    ports: 
+      - 3332:3332
+    volumes:
+      - .:/usr/orders
+    links:
+      - db-service-orders
+    depends_on:
+      - db-service-orders
 
-  # customers-service:
-  #   build: ./customers
-  #   container_name: customers-service-app
-  #   ports: 
-  #     - 3333:3333
-  #   volumes:
-  #     - .:/usr/customers
-  #   links:
-  #     - db-service-customers
-  #   depends_on:
-  #     - db-service-customers
+  customers-service:
+    build: ./customers
+    container_name: customers-service-app
+    ports: 
+      - 3333:3333
+    volumes:
+      - .:/usr/customers
+    links:
+      - db-service-customers
+    depends_on:
+      - db-service-customers
 
 
   kong-migrations:
